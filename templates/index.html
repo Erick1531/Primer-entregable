@@ -47,19 +47,32 @@
             filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
         }
         
-        /* Personalización de controles de Leaflet */
+        /* Personalización de controles de Leaflet (Ley de Fitts: Objetivos más grandes) */
         .leaflet-control-zoom {
             border: none !important;
             box-shadow: none !important;
+            margin-bottom: 30px !important; /* Separación del borde inferior */
+            margin-right: 20px !important; /* Separación del borde derecho */
         }
         
         .leaflet-control-zoom a {
             background-color: var(--primary) !important;
             color: black !important;
-            border: 1px solid black !important;
-            border-radius: 4px !important;
-            margin-bottom: 5px !important;
-            font-weight: bold;
+            border: 2px solid black !important; /* Borde más grueso para contraste */
+            border-radius: 12px !important; /* Bordes más suaves */
+            margin-bottom: 12px !important; /* Más espacio entre botones + y - */
+            font-weight: 800 !important;
+            
+            /* Ley de Fitts: Aumento de tamaño a 50px (estándar táctil) */
+            width: 50px !important;
+            height: 50px !important;
+            line-height: 46px !important; /* Centrado vertical */
+            font-size: 24px !important;
+            transition: transform 0.1s;
+        }
+
+        .leaflet-control-zoom a:active {
+            transform: scale(0.9);
         }
 
         .leaflet-popup-content-wrapper, .leaflet-popup-tip {
@@ -103,8 +116,8 @@
             <!-- Buscador Táctico -->
             <div class="hidden md:flex flex-1 max-w-lg mx-8 relative">
                 <input type="text" placeholder="BUSCAR COORDENADAS O RUTA..." 
-                       class="w-full bg-white/5 border border-white/10 rounded-lg py-2 px-4 text-sm mono text-[#afff1a] focus:outline-none focus:border-[#afff1a] placeholder-slate-600 transition-colors">
-                <i class="fas fa-search absolute right-3 top-2.5 text-slate-500"></i>
+                       class="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-4 text-sm mono text-[#afff1a] focus:outline-none focus:border-[#afff1a] placeholder-slate-600 transition-colors">
+                <i class="fas fa-search absolute right-3 top-3.5 text-slate-500"></i>
             </div>
 
             <div class="flex items-center space-x-4">
@@ -151,14 +164,19 @@
             </div>
         </div>
 
-        <!-- Botones de Acción Flotantes (Bottom Center) -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-[400] flex gap-4">
-            <button class="glass-panel px-6 py-3 rounded-full text-white hover:border-[#afff1a] hover:text-[#afff1a] transition-all flex items-center gap-2 group">
-                <i class="fas fa-record-vinyl text-red-500 group-hover:animate-pulse"></i>
-                <span class="font-bold text-sm">Grabar Ruta</span>
+        <!-- Botones de Acción Flotantes (Ley de Fitts: Grandes y accesibles) -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-[400] flex gap-6 items-center w-full justify-center px-4">
+            
+            <!-- Botón Secundario: Más grande y con icono más visible -->
+            <button class="glass-panel px-8 py-4 rounded-full text-white border-2 border-transparent hover:border-[#afff1a] hover:text-[#afff1a] transition-all flex items-center gap-3 group active:scale-95 shadow-lg backdrop-blur-xl">
+                <i class="fas fa-record-vinyl text-red-500 text-xl group-hover:animate-pulse"></i>
+                <span class="font-extrabold text-base tracking-wide">GRABAR RUTA</span>
             </button>
-            <button class="bg-[#afff1a] text-black px-6 py-3 rounded-full font-extrabold text-sm hover:scale-105 transition-transform shadow-[0_0_20px_rgba(175,255,26,0.4)]">
-                <i class="fas fa-plus mr-1"></i> NUEVO PUNTO
+            
+            <!-- Botón Primario: Target masivo, sombra prominente y contraste alto -->
+            <button class="bg-[#afff1a] text-black px-10 py-5 rounded-full font-black text-lg hover:scale-105 active:scale-95 transition-all duration-200 shadow-[0_0_30px_rgba(175,255,26,0.5)] flex items-center gap-3 border-2 border-black">
+                <i class="fas fa-plus text-xl"></i> 
+                <span>NUEVO PUNTO</span>
             </button>
         </div>
 
