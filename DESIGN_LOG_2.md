@@ -32,3 +32,7 @@ Estas acciones convierten los botones en **targets grandes, claros y cercanos**,
 
 ## Conclusión
 El aumento deliberado del tamaño y la accesibilidad de los botones de Zoom y de acción responde directamente a los principios de la Ley de Fitts, logrando una interfaz más rápida, intuitiva y segura, especialmente en escenarios de navegación activa y uso móvil.
+
+### Prompt utilizado
+
+"Crea una Landing Page HTML para una app de mapas llamada [RUMBO]. Debe tener un 'Hero' con una imagen de fondo de un mapa estilizado o topográfico, un título grande, y un botón CTA prominente que diga 'Explorar Mapa'. Usa Tailwind CSS. El diseño debe inspirar aventura/seguridad."
