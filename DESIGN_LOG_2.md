@@ -35,4 +35,6 @@ El aumento deliberado del tamaño y la accesibilidad de los botones de Zoom y de
 
 ### Prompt utilizado
 
-"Crea una Landing Page HTML para una app de mapas llamada [RUMBO]. Debe tener un 'Hero' con una imagen de fondo de un mapa estilizado o topográfico, un título grande, y un botón CTA prominente que diga 'Explorar Mapa'. Usa Tailwind CSS. El diseño debe inspirar aventura/seguridad."
+- "Genera un archivo HTML que incluya Leaflet.js vía CDN. Crea un mapa centrado en Tijuana (32.5149, -117.0382) con OpenStreetMap. Asegura que los controles de zoom estén posicionados según principios de ergonomía."
+
+- "Implementa un sistema de marcadores interactivos: al hacer clic en el mapa, aparece un marcador temporal con popup de confirmación. Al aceptar, envía las coordenadas a un endpoint Flask simulando guardado en servidor."
